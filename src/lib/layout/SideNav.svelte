@@ -1,17 +1,20 @@
 <script>
-    import { page } from '$app/stores';
+    import { page } from '$app/stores'
     import { fly, fade } from 'svelte/transition'
     import Icon from '$lib/ui/Icon.svelte'
 
     let open
-
-    let windowWidth;
+    let windowWidth
     let mode
+    let userClosed = false
 
-    $: windowWidth > 900 ? open = true : open = false;
-    $: windowWidth > 900 ? mode = "fixed" : mode= "drawer";
+    $: windowWidth > 900 && !userClosed  ? open = true : open = false
+    $: windowWidth > 900 ? mode = "fixed" : mode= "drawer"
 
     const toggleOpen = () => {
+        if (mode === 'fixed') {
+            userClosed = !userClosed
+        } 
         open = !open
     }
 
@@ -29,6 +32,7 @@
 
 <svelte:window bind:innerWidth={windowWidth}/>
 
+{#if windowWidth}
 <nav class="sidenav" class:open={open}>
     <div class="nav-items-wrapper">
         {#if open}
@@ -50,6 +54,7 @@
     <div class="click-target" on:click={toggleOpen}></div>
     {/if}
 </nav>
+{/if}
 
 {#if open}
 <div class="backdrop" transition:fade={{duration: 300, delay: 100}} on:click={toggleOpen}></div>
