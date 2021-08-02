@@ -12,7 +12,7 @@
 		{
 			name: '',
             icon: 'github',
-			href: '/'
+			href: 'https://github.com/singulusoculus/svelte-comp-lib'
         },
     ]
 

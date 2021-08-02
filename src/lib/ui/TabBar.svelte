@@ -26,15 +26,6 @@
         }
     }
 
-
-    // afterUpdate(async () => {
-    //     await tick()
-    //     activeTab = tabsEl.querySelector(`.tab-${active}`)
-    //     indicatorLeft = activeTab.offsetLeft + 'px'
-    //     indicatorWidth = activeTab.offsetWidth + 'px'
-    // })
-
-
     const setActive = (e) => {
         const target = e.target
         indicatorLeft = target.offsetLeft + 'px'
@@ -95,7 +86,7 @@
         transition: 0.4s;
     }
 
-    /* .tab-bar > .indicator:before {
+    /* .tabs > .indicator:before {
     	position: absolute;
         content: "";
         bottom: -2px;

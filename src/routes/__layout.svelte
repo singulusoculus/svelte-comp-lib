@@ -7,7 +7,7 @@
     import SideNav from '$lib/layout/SideNav.svelte';
     import Nav from '$lib/ui/Nav.svelte';
 
-    export let sideNavItems = [
+    let sideNavItems = [
 		{
 			name: 'Home',
 			href: '/'
@@ -21,8 +21,8 @@
             href: '/text-fields'
         },
         {
-            name: 'Loaders',
-            href: '/loaders'
+            name: 'Loaders and Progress',
+            href: '/loaders-progress'
         },
         {
             name: 'Controls',
@@ -54,11 +54,24 @@
         },
     ]
 
+    let navItems = [
+        {
+			name: '',
+            icon: 'home',
+			href: '/'
+        },
+		{
+			name: '',
+            icon: 'github',
+			href: 'https://github.com/singulusoculus/svelte-comp-lib'
+        },
+    ]
+
 </script>
 <div class="page-wrapper">
         <div class="header">
             <Header disappearOnScroll={false}>
-                <Nav hasMobileNav={false} />
+                <Nav hasMobileNav={false} {navItems} />
             </Header>
         </div>
         
