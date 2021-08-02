@@ -34,14 +34,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		width: 100vw;
+		width: 100%;
 		height: var(--nav-h);
 		padding: 0 var(--side-nav);
 		margin: 0 auto;
 		background-color: white;
 		box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,0.5);
 		font-family: var(--font);
-		z-index: 401;
+		z-index: 405;
 		user-select: none;
 		transform: translate(0,calc(-100% - 1rem));
 		transition: transform 0.2s;
@@ -55,7 +55,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		width: 100vw;
+		width: 100%;
 		height: var(--nav-h);
 		padding: 0 0 0 1.5rem;
 		display: flex;

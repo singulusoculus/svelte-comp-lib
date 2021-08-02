@@ -37,10 +37,6 @@
             href: '/card'
         },
         {
-            name: 'Progress Indicator',
-            href: '/progress'
-        },
-        {
             name: 'Lightbox',
             href: '/lightbox'
         },
@@ -51,6 +47,10 @@
         {
             name: 'Tabs',
             href: '/tabs'
+        },
+        {
+            name: 'Navigation',
+            href: '/navigation'
         },
     ]
 
@@ -110,7 +110,12 @@
 
     .sidebar {
         grid-area: sidebar;
-        position: relative
+        position: sticky;
+        top: 6rem;
+        align-self: flex-start;
+        height: 100vh;
+        margin-bottom: var(--foot-h);
+        z-index: 401;
     }
 
     .main {

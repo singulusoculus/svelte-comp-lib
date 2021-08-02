@@ -12,5 +12,6 @@
         max-width: var(--main-width);
         width: 95%;
         height: 100%;
+        position: relative;
     }
 </style>

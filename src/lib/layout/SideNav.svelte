@@ -27,6 +27,18 @@
             name: 'Loaders',
             href: '/loaders'
         },
+        {
+            name: 'Demo',
+            href: '/'
+        },
+        {
+            name: 'Demo',
+            href: '/'
+        },
+        {
+            name: 'Demo',
+            href: '/'
+        },
     ]
 </script>
 
@@ -77,9 +89,7 @@
     }
 
     .nav-items-wrapper {
-        align-self: flex-start;
-        position: sticky;
-        top: 8rem;
+        position: relative;
         width: 100%;
 
     }
@@ -154,6 +164,7 @@
         .click-target {
             right: 0;
             left: unset;
+
         }
     }
 </style>
