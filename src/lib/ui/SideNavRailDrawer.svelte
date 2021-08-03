@@ -1,6 +1,7 @@
 <script>
     import { fly, fade } from 'svelte/transition'
     import { createEventDispatcher } from 'svelte';
+import Backdrop from './Backdrop.svelte';
 
     const dispatch = createEventDispatcher();
 
@@ -55,7 +56,7 @@
     }
 
 	.drawer-overlay {
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         height: 100%;
@@ -70,7 +71,7 @@
             min-height: 100%;
             min-width: 100%;
             margin-top: 4rem;
-            transform: translateY(200%);
+            transform: translateY(0);
             border-radius: 3px;
             padding: 4rem 0 0 0;
         }
@@ -80,14 +81,15 @@
     }
 
         .drawer.open {
-            transform: translateY(20%);
+            transform: translateY(-30rem);
         }
     }
 
 </style>
 
 {#if drawerVisible}
-    <div class="drawer-overlay"  on:click={handleOverlayClick} transition:fade></div>
+    <Backdrop on:clicked={handleOverlayClick} z={394} />
+    <!-- <div class="drawer-overlay"  on:click={handleOverlayClick} transition:fade></div> -->
 {/if}
 
 <div class="drawer drawer-menu" class:open={drawerVisible === "menu"}>

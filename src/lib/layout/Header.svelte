@@ -1,5 +1,6 @@
 <script>
     export let disappearOnScroll = false
+    export let title = "Demo"
 
     let visible = true
     let lastScroll = 0
@@ -20,7 +21,7 @@
     <header>
         <a href="." class="branding" alt="branding - go home link">
             <img src="logo.png" alt="logo">
-            <h1>SvelteCompLib</h1>
+            <h1>{title}</h1>
         </a>
         <slot></slot>
     </header>
@@ -36,7 +37,6 @@
 		justify-content: space-between;
 		width: 100%;
 		height: var(--nav-h);
-		padding: 0 var(--side-nav);
 		margin: 0 auto;
 		background-color: white;
 		box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,0.5);

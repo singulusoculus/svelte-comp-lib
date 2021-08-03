@@ -70,7 +70,7 @@
 </script>
 <div class="page-wrapper">
         <div class="header">
-            <Header disappearOnScroll={false}>
+            <Header disappearOnScroll={false} title="SvelteCompLib">
                 <Nav hasMobileNav={false} {navItems} />
             </Header>
         </div>
@@ -114,7 +114,6 @@
         top: 6rem;
         align-self: flex-start;
         height: 100vh;
-        margin-bottom: var(--foot-h);
         z-index: 401;
     }
 
@@ -124,6 +123,7 @@
 
     .foot {
         grid-area: foot;
+        z-index: 402;
     }
 
 </style>

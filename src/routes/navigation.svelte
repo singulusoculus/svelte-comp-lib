@@ -24,12 +24,12 @@
 <DemoBox title="Header with Nav">
     <div class="demo-set-header">
         <Header disappearOnScroll={false}>
-            <Nav hasMobileNav={false} {navItems} />
+            <Nav hasMobileNav={true} {navItems} />
         </Header>   
     </div>
 </DemoBox>
 
-<DemoBox title="Side Nav Rail" >
+<DemoBox title="Side Nav Rail with Drawer" >
     <SideNavRail />
 </DemoBox>
 

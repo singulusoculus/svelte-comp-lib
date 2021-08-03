@@ -28,11 +28,16 @@
     {/if} -->
     {#each navItems as navItem}
     <li class="nav-item" on:click={toggleDrawer} aria-current="{$page.path === navItem.href ? 'page' : undefined}">
-        <a href={navItem.href}>{navItem.name}</a>
+        <a href={navItem.href}>
+            {#if navItem.icon}
+                <Icon name={navItem.icon} />
+            {/if}
+            {navItem.name}
+        </a>
     </li>
     {/each}
 </ul>
-<Backdrop on:clicked={toggleDrawer} {persist} />
+<Backdrop on:clicked={toggleDrawer} {persist} z={449} />
 {/if}
 
 <style>
@@ -44,10 +49,10 @@
         /* justify-content: center; */
         background-color: #FFF;
         width: var(--side-nav);
-        position: fixed;
+        position: absolute;
         top: 0;  
-        height: 105%;   
-        z-index: 400;
+        height: 100vh;   
+        z-index: 450;
         list-style-type: none;
         padding: 2rem 2rem 0 0;
     }

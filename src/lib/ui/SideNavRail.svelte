@@ -99,7 +99,7 @@
 			position: absolute;
 			bottom: -1px;
 			width: 100%;
-			z-index: 500;
+			z-index: 350;
 		}
 
 		nav {

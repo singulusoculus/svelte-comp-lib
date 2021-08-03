@@ -83,11 +83,18 @@
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
         </symbol>
-
+        
+    
         <symbol id='menu' class='icon' viewBox='0 0 24 24'>
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
+        </symbol>
+
+        <symbol id='monitor' class='icon' viewBox='0 0 24 24'>
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
         </symbol>
         
         <symbol id='report' class='icon' viewBox='0 0 24 24'>
@@ -105,6 +112,11 @@
 
         <symbol id='smartphone' class='icon' viewBox='0 0 24 24'>
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </symbol>
+
+        <symbol id='tablet' class='icon' viewBox='0 0 24 24'>
+            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
             <line x1="12" y1="18" x2="12.01" y2="18"></line>
         </symbol>
 

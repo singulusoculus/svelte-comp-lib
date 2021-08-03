@@ -5,10 +5,14 @@
     export let name;
     export let size = 20;
     // export let color
+
+    const clickedIcon = (e) => {
+        const clickedIcon = e.path[0].children[0].attributes["xlink:href"].value.substring(1)
+        dispatch("clicked", {clickedIcon})
+    }
 </script>
 
-
-<svg class="icon" width={size} height={size} on:click={() => {dispatch("clicked")}}>
+<svg class="icon" width={size} height={size} on:click={(e) => {dispatch("clicked", {event: e})}}>
     <use xlink:href='#{name}' />
 </svg>
 
