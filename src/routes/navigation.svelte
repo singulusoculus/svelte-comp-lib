@@ -29,7 +29,7 @@
     </div>
 </DemoBox>
 
-<DemoBox title="Side Nav Rail with Drawer" >
+<DemoBox title="Side Nav Rail with Drawer" height={40} >
     <SideNavRail />
 </DemoBox>
 

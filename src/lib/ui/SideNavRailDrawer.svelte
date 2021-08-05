@@ -1,15 +1,5 @@
 <script>
-    import { fly, fade } from 'svelte/transition'
-    import { createEventDispatcher } from 'svelte';
-import Backdrop from './Backdrop.svelte';
-
-    const dispatch = createEventDispatcher();
-
     export let drawerVisible;
-
-    const handleOverlayClick = () => {
-        dispatch('overlayClicked', drawerVisible)
-    }
 
 </script>
 
@@ -57,7 +47,7 @@ import Backdrop from './Backdrop.svelte';
     
     @media only screen and (max-width: 960px) {
         .drawer {
-            height: unset;
+            height: 33rem;
             min-height: 100%;
             min-width: 100%;
             margin-top: 4rem;
@@ -76,10 +66,6 @@ import Backdrop from './Backdrop.svelte';
     }
 
 </style>
-
-{#if drawerVisible}
-    <Backdrop on:clicked={handleOverlayClick} />
-{/if}
 
 <div class="drawer drawer-menu" class:open={drawerVisible === "menu"}>
     <ul class="menu">

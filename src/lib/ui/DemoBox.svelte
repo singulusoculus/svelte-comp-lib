@@ -1,10 +1,11 @@
 <script>
     import Card from '$lib/ui/Card.svelte'
     export let title = "Demo Title"
+    export let height = 30
 
 </script>
 
-<div class="demo-wrapper">
+<div class="demo-wrapper" style="--height: {height}rem">
     <Card>
         <h3>{title}</h3>
         <div class="demo-box">
@@ -26,7 +27,7 @@
         overflow: hidden;
         border: 1px #000 solid;
         width: 100%;
-        height: 30rem;
+        height: var(--height);
         display: flex;
         z-index: 0;
     }

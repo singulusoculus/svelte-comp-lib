@@ -2,6 +2,7 @@
 	import { fly, fade } from 'svelte/transition'
 	import NavDrawer from '$lib/ui/SideNavRailDrawer.svelte'
 	import Icon from '$lib/ui/Icon.svelte'
+	import Backdrop from './Backdrop.svelte'
 
 	let drawerVisible = null
 
@@ -202,7 +203,10 @@
 		</div>
 
 	</nav>
-	<NavDrawer drawerVisible={drawerVisible} on:overlayClicked={() => {toggleDrawer()}} />
+	<NavDrawer drawerVisible={drawerVisible} />
 </div>
+{#if drawerVisible}
+	<Backdrop on:clicked={() => {toggleDrawer()}} />
+{/if}
 
 
