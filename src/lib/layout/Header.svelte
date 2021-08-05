@@ -41,7 +41,6 @@
 		background-color: white;
 		box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,0.5);
 		font-family: var(--font);
-		z-index: 405;
 		user-select: none;
 		transform: translate(0,calc(-100% - 1rem));
 		transition: transform 0.2s;

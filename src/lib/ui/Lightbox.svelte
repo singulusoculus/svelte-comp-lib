@@ -1,6 +1,7 @@
 <script>
     import { fade, fly } from 'svelte/transition'
     import Icon from '$lib/ui/Icon.svelte'
+import Backdrop from './Backdrop.svelte'
 
     export let imageSrc
     export let imageDesc
@@ -22,7 +23,7 @@
     }
 
     .wrapper.active {
-        z-index: 20;
+        /* z-index: 20; */
     }
 
     .image {
@@ -30,7 +31,7 @@
         transition: all .3s;
         /* width: 90%; */
         margin: 1rem 1rem;
-        z-index: 10;
+        /* z-index: 10; */
         cursor: zoom-in;
     }
 
@@ -43,31 +44,18 @@
         transform: translateY(-4px);
         box-shadow: 0 3px 9px rgba(0, 0, 0, 0.35);
     }
-
-    .active-image-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-        background: rgba(0, 0, 0, 0.75);
-    }
-
-    .active-image {
-        z-index: 100;
-        width: 80%;
-        border-radius: 3px;
-    }
-
+    
     .active-image-wrapper {
-        position: relative;
+        position: absolute;
         /* width: 100%; */
         text-align: center;
+        z-index: 60;
+        width: 100%;
+    }
+    
+    .active-image {
+        width: 80%;
+        border-radius: 3px;
     }
 
     span {
@@ -93,13 +81,14 @@
 </style>
 
 {#if isActive}
-    <div class="active-image-backdrop" on:click={toggleImage} transition:fade|local={{duration: 200}}>
-        <div class="active-image-wrapper">
-            <img src="{imageSrc}" alt="{imageDesc}" class="active-image" transition:fly={{y: 100, duration: 500, delay: 100}} on:click|stopPropagation="{!isActive ? toggleImage : null}">
-            <span aria-hidden="true" on:click|stopPropagation={toggleImage} in:fade|local={{delay: 400, duration: 200}}>
-                <Icon name="close" />
-            </span>
-        </div>
+    <!-- <div class="active-image-backdrop" on:click={toggleImage} transition:fade|local={{duration: 200}}>
+    </div> -->
+    <Backdrop on:clicked={toggleImage} />
+    <div class="active-image-wrapper">
+        <img src="{imageSrc}" alt="{imageDesc}" class="active-image" transition:fly={{y: 100, duration: 500, delay: 100}} on:click|stopPropagation="{!isActive ? toggleImage : null}">
+        <span aria-hidden="true" on:click|stopPropagation={toggleImage} in:fade|local={{delay: 400, duration: 200}}>
+            <Icon name="close" />
+        </span>
     </div>
 {/if}
 

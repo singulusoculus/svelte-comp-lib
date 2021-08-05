@@ -3,9 +3,9 @@
 </script>
 
 <h2>Lightbox</h2>
-<div class="image">
+
     <Lightbox imageSrc="/img/headshot.jpg" imageDesc="Headshot" />
-</div>
+
 
 <style>
     h2 {

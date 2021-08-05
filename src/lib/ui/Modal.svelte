@@ -4,6 +4,7 @@
     // import modal from '../store/modal'
 
     import { writable } from 'svelte/store'
+import Backdrop from './Backdrop.svelte'
 
     const modalStore = writable({
         show: false,
@@ -32,15 +33,6 @@
 </script>
 
 <style>
-    .modal-backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.75);
-        z-index: 110;
-    }
 
     .modal {
         position: fixed;
@@ -50,7 +42,7 @@
         max-height: 80vh;
         background: white;
         border-radius: 5px;
-        z-index: 200;
+        z-index: 80;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
         /* overflow: scroll; */
     }
@@ -85,9 +77,11 @@
 {#if $modal.show}
 
 {#if !backgroundClose}
-    <div class="modal-backdrop" transition:fade={{duration: 300}}></div>
+    <!-- <div class="modal-backdrop" transition:fade={{duration: 300}}></div> -->
+    <Backdrop />
 {:else}
-    <div class="modal-backdrop" on:click={closeModal} transition:fade={{duration: 300}}></div>
+    <!-- <div class="modal-backdrop" on:click={closeModal} transition:fade={{duration: 300}}></div> -->
+    <Backdrop on:clicked={closeModal} />
 {/if}
 
 <div class="modal" transition:fly={{duration: 500, x: 0, y:-75}}>

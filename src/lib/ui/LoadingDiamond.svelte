@@ -1,5 +1,6 @@
 <script>
     import { fade } from 'svelte/transition'
+    import Backdrop from './Backdrop.svelte'
 
     export let loading
     export let style = 'left-right'
@@ -7,17 +8,6 @@
 </script>
 
 <style>
-
-    .loading-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.30);
-        z-index: 110;
-    }
-
     .loading {
         position: absolute;
         left: 50%;
@@ -25,13 +15,14 @@
         transform: translate(-50%, -50%) rotate(45deg);
         width: 60px;
         height: 60px;
-        z-index: 111;
+        z-index: 90;
     }
 
     .inline.loading {
         position: relative;
         left: unset;
         top: unset;
+        z-index: 90;
     }
         
     .loading .l {
@@ -238,7 +229,6 @@
 
 {#if loading}
     {#if !inline}
-    <div class="loading-backdrop" transition:fade={{duration: 300}}></div>
 
     <div class="{style} loading" transition:fade={{duration: 300}}>
         <span class="l l1"></span>
@@ -251,6 +241,7 @@
         <span class="l l8"></span>
         <span class="l l9"></span>
     </div>
+    <Backdrop z={30} />
     {:else}
     <div class="inline {style} loading" transition:fade|local={{duration: 300}}>
         <span class="l l1"></span>

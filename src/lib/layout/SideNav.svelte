@@ -2,6 +2,7 @@
     import { page } from '$app/stores'
     import { fly, fade } from 'svelte/transition'
     import Icon from '$lib/ui/Icon.svelte'
+    import Backdrop from '$lib/ui/Backdrop.svelte'
 
     let open
     let windowWidth
@@ -68,8 +69,9 @@
 </nav>
 {/if}
 
-{#if open}
-<div class="backdrop" transition:fade={{duration: 300, delay: 100}} on:click={toggleOpen}></div>
+{#if open && mode === 'drawer'}
+<Backdrop on:clicked={toggleOpen} />
+<!-- <div class="backdrop" transition:fade={{duration: 300, delay: 100}} on:click={toggleOpen}></div> -->
 {/if}
 
 
@@ -144,17 +146,7 @@
             left: -25rem;
             transition: left .4s ease-in-out;
             width: var(--side-nav);
-            z-index: 400;
-        }
-
-        .backdrop {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100vw;
-            background-color:  rgba(0,0,0,0.25);
-            z-index:395;
+            z-index: 70;
         }
 
         nav.open {

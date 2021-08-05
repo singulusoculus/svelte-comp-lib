@@ -106,6 +106,7 @@
 
     .header {
         grid-area: head;
+        z-index: 20;
     }
 
     .sidebar {
@@ -114,16 +115,17 @@
         top: 6rem;
         align-self: flex-start;
         height: 100vh;
-        z-index: 401;
+        z-index: 10;
     }
 
     .main {
         grid-area: main;
+        z-index: 0;
     }
 
     .foot {
         grid-area: foot;
-        z-index: 402;
+        z-index: 20;
     }
 
 </style>

@@ -37,7 +37,7 @@
     </li>
     {/each}
 </ul>
-<Backdrop on:clicked={toggleDrawer} {persist} z={449} />
+<Backdrop on:clicked={toggleDrawer} {persist} />
 {/if}
 
 <style>
@@ -52,7 +52,7 @@
         position: absolute;
         top: 0;  
         height: 100vh;   
-        z-index: 450;
+        z-index: 70;
         list-style-type: none;
         padding: 2rem 2rem 0 0;
     }

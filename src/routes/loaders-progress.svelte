@@ -5,22 +5,26 @@
     import LoadingBall from '$lib/ui/LoadingBall.svelte'
     import ProgressIndicator from '$lib/ui/ProgressIndicator.svelte'
     import TextField from '$lib/ui/TextField.svelte'
+    import DemoBox from '$lib/ui/DemoBox.svelte'
     let progress = 52
 </script>
 
+<DemoBox title="Diamond Loaders">
+    <div class="loaders">
+        <LoadingDiamond loading={true} style="top-down" inline={true}/>
+        <LoadingDiamond loading={true} style="chase" inline={true}/>
+        <LoadingDiamond loading={true} style="left-right" inline={true}/>
+        <LoadingDiamond loading={true} style="bottom-up" inline={true}/>
+    </div>
+</DemoBox>
 
-<h2>Loaders</h2>
-<div class="loaders">
-    <LoadingDiamond loading={true} style="top-down" inline={true}/>
-    <LoadingDiamond loading={true} style="chase" inline={true}/>
-    <LoadingDiamond loading={true} style="left-right" inline={true}/>
-    <LoadingDiamond loading={true} style="bottom-up" inline={true}/>
-</div>
-<div class="loaders">
-    <LoadingElipses />
-    <LoadingSquares loading={true} inline={true} />
-    <LoadingBall />
-</div>
+<DemoBox title="Other Loaders" >
+    <div class="loaders">
+        <LoadingElipses />
+        <LoadingSquares loading={true} inline={true} />
+        <LoadingBall />
+    </div>
+</DemoBox>
 
 <h2>Progress Indicator</h2>
 <ProgressIndicator bind:progress={progress} />
@@ -37,6 +41,7 @@
     .loaders {
         display: flex;
         justify-content: space-around;
-        margin-top: 5rem;
+        margin: 5rem 1rem;
+        width: 100%;
     }
 </style>

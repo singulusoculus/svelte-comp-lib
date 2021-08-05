@@ -28,6 +28,7 @@
         width: 100%;
         height: 30rem;
         display: flex;
+        z-index: 0;
     }
 
 </style>

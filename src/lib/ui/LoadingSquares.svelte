@@ -1,12 +1,12 @@
 <script>
-    import { fade } from 'svelte/transition'
+    import Backdrop from './Backdrop.svelte'
 
     export let loading
     export let inline = false
 </script>
 {#if loading}
     {#if !inline}
-        <div class="loading-backdrop" transition:fade={{duration: 300}}></div>
+        <Backdrop />
 
         <div class="loading-squares">
             <div class="scaling-squares-spinner">
@@ -31,8 +31,8 @@
 
 <style>
     .loading-squares {
-        position: fixed;
-        z-index: 1500;
+        position: absolute;
+        z-index: 90;
         height: 2em;
         width: 2em;
         margin: auto;
@@ -40,16 +40,6 @@
         left: 0;
         bottom: 0;
         right: 0;
-    }
-
-    .loading-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.30);
-        z-index: 110;
     }
 
     .inline.loading-squares {
@@ -73,7 +63,7 @@
     .scaling-squares-spinner, .scaling-squares-spinner * {
     box-sizing: border-box;
     /* position: fixed; */
-    z-index: 1500;
+    z-index: 90;
     height: 8rem;
     width: 8rem;
     overflow: show;

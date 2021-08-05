@@ -4,7 +4,7 @@
     const dispatch = createEventDispatcher();
 
     export let persist = false
-    export let z = 395
+    export let z = 30
 </script>
 
 {#if !persist}
@@ -20,7 +20,7 @@
         left: 0;
         height: 100vh;
         width: 100vw;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.3);
         z-index: var(--z);  
         overflow: hidden;     
     }

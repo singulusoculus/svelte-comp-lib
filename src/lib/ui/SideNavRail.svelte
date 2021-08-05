@@ -30,7 +30,7 @@
 		flex-direction: column;
 		justify-content: space-between;
 		box-shadow: 4px 4px 5px 0 rgba(0,0,0,0.30);
-		z-index: 400;
+		z-index: 50;
 	}
 
 	.logo {
@@ -99,7 +99,7 @@
 			position: absolute;
 			bottom: -1px;
 			width: 100%;
-			z-index: 350;
+			z-index: 50;
 		}
 
 		nav {

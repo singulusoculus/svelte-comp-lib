@@ -26,7 +26,7 @@ import Backdrop from './Backdrop.svelte';
 
     .menu > li > a {
         color: #000;
-        z-index: 401;
+        z-index: 40;
         text-decoration: none;
     }
 
@@ -41,7 +41,7 @@ import Backdrop from './Backdrop.svelte';
         left: 0;
         top: 0;  
         height: 105%;   
-        z-index: 395;
+        z-index: 40;
         padding: 2rem 2rem 0 5rem;
         transition: all .6s ease-in-out;
         overflow: visible;
@@ -53,16 +53,6 @@ import Backdrop from './Backdrop.svelte';
 
     .drawer.open {
         transform: translateX(0%);
-    }
-
-	.drawer-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba(0,0,0,0.5);
-        z-index:395;
     }
     
     @media only screen and (max-width: 960px) {
@@ -77,8 +67,8 @@ import Backdrop from './Backdrop.svelte';
         }
 
         .drawer.drawer-menu {
-        align-items: center;
-    }
+            align-items: center;
+        }
 
         .drawer.open {
             transform: translateY(-30rem);
@@ -88,8 +78,7 @@ import Backdrop from './Backdrop.svelte';
 </style>
 
 {#if drawerVisible}
-    <Backdrop on:clicked={handleOverlayClick} z={394} />
-    <!-- <div class="drawer-overlay"  on:click={handleOverlayClick} transition:fade></div> -->
+    <Backdrop on:clicked={handleOverlayClick} />
 {/if}
 
 <div class="drawer drawer-menu" class:open={drawerVisible === "menu"}>

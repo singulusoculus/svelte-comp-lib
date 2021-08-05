@@ -44,7 +44,7 @@
 <style>
     .demo-set-header > :global(.header-wrapper) {
         position: absolute;
-        z-index: 400;
+
     }
 
     .demo-set-header > :global(.header-wrapper) > :global(header) {
