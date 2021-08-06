@@ -30,6 +30,7 @@
         height: var(--height);
         display: flex;
         z-index: 0;
+        background-color: var(--back);
     }
 
 </style>

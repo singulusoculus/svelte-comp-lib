@@ -79,7 +79,7 @@
 
     nav {
         display: flex;
-        background-color: #ebe8e8;
+        background-color: var(--sidebar);
         width: 5rem;
         height: 100%;
         padding: 2rem 2rem 0 2rem;

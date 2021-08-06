@@ -6,6 +6,7 @@
     import Icons from '$lib/ui/Icons.svelte'
     import SideNav from '$lib/layout/SideNav.svelte';
     import Nav from '$lib/ui/Nav.svelte';
+    import DarkModeToggle from '$lib/ui/DarkModeToggle.svelte';
 
     let sideNavItems = [
 		{
@@ -58,12 +59,20 @@
         {
 			name: '',
             icon: 'home',
-			href: '/'
+			href: '/',
+            component: ''
         },
 		{
 			name: '',
             icon: 'github',
-			href: 'https://github.com/singulusoculus/svelte-comp-lib'
+			href: 'https://github.com/singulusoculus/svelte-comp-lib',
+            component: ''
+        },
+		{
+			name: '',
+            icon: '',
+			href: '',
+            component: DarkModeToggle
         },
     ]
 

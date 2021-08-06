@@ -80,13 +80,13 @@
 	}
 
 	.site-nav > div.active {
-		background-color: #FFF;
+		background-color: var(--back-3);
 		box-shadow: unset;
 		transform: translateX(2rem);
 	}
 
 	.site-nav > div.active {
-		color: #000;
+		color: var(--text);
 	}
 
 	.icon {

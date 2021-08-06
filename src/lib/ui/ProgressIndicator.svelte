@@ -27,7 +27,7 @@
     .base {
         width: 100%;
         height: 4px;
-        background-color: #C7C7C7;
+        background-color: var(--back-3);
     }
 
     .progress {

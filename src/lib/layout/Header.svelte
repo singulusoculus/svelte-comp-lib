@@ -38,7 +38,7 @@
 		width: 100%;
 		height: var(--nav-h);
 		margin: 0 auto;
-		background-color: white;
+		background-color: var(--back-3);
 		box-shadow: 0 -0.4rem 0.9rem 0.2rem rgba(0,0,0,0.5);
 		font-family: var(--font);
 		user-select: none;

@@ -47,7 +47,7 @@
         flex-direction: column;
         align-items: center;
         /* justify-content: center; */
-        background-color: #FFF;
+        background-color: var(--back-2);
         width: var(--side-nav);
         position: absolute;
         top: 0;  

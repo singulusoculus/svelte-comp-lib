@@ -8,7 +8,7 @@
 
 <style>
     .card {
-        background: #fff;
+        background: var(--back-2);
         padding: 2rem;
         margin: 1rem auto;
         border-radius: 3px;

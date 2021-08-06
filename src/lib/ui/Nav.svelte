@@ -7,12 +7,14 @@
         {
 			name: '',
             icon: 'home',
-			href: '/'
+			href: '/',
+            component: ''
         },
 		{
 			name: '',
             icon: 'github',
-			href: 'https://github.com/singulusoculus/svelte-comp-lib'
+			href: 'https://github.com/singulusoculus/svelte-comp-lib',
+            component: ''
         },
     ]
 
@@ -27,6 +29,7 @@
     <ul>
         {#each navItems as navItem}
         <li class="nav-item">
+            {#if !navItem.component}
             <a href={navItem.href}>
 
                 {#if navItem.name}
@@ -37,6 +40,9 @@
                 <Icon name={navItem.icon} size={28}/>
                 {/if}
             </a>
+            {:else}
+            <svelte:component this={navItem.component}/>
+            {/if}
         </li>
         {/each}
     </ul>
@@ -84,7 +90,7 @@
     }
 
     .menu-btn {
-        color: var(--prime);
+        color: var(--text);
         position: absolute;
         right: 2rem;
         display: none;

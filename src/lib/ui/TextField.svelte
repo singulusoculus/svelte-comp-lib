@@ -51,13 +51,14 @@
 <style>
     textarea {
         border-radius: 3px;
-        border: 1px solid rgb(238, 238, 238);
+        border: 1px solid var(--black);
         resize: vertical;
         padding: 1.2rem;
         width: 100%;
         transition: border-color 0.3s;
         font: var(--font);
         font-size: 1.8rem;
+        background-color: var(--back);
     }
 
     .text-input {
@@ -80,18 +81,18 @@
 
     input {
         width: 100%;
-        color: black;
+        color: var(--text);
         padding: 2rem 1rem .5rem 1rem;
         border-top-right-radius: 3px;
         border-top-left-radius: 3px;
         border: none;
-        background-color: #F5F5F5;
+        background-color: var(--back-2);
         font-size: 1.8rem;
         font-family: var(--font);
     }
 
     input::placeholder {
-        color: #9e9e9e;
+        color: var(--text-second);
     }
 
     .line {
@@ -100,7 +101,7 @@
         width: 100%;
         left: 0;
         bottom: 0;
-        background-color: black;
+        background-color: var(--black);
     }
 
     .focused-line {
@@ -162,6 +163,7 @@
 
     textarea:focus {
         border-color: var(--flash);
+        border-width: 2px;
     }
 
     textarea:focus + label {

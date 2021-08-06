@@ -15,7 +15,7 @@
     }
 
     .menu > li > a {
-        color: #000;
+        color: var(--text);
         z-index: 40;
         text-decoration: none;
     }
@@ -25,7 +25,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #FFF;
+        background-color: var(--back-3);
         min-width: 350px;
         position: absolute;
         left: 0;

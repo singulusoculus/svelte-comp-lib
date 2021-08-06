@@ -27,9 +27,14 @@
         cursor: pointer;
         line-height: 1.9;
         padding: 1.8rem;
-        background-color: #fff;
+        background-color: var(--back-3);
         border-bottom: 1px solid #ddd;
         font-size: 1.8rem;
+        transition: border-bottom .4s;
+    }
+
+    .active > .header {
+        border-bottom: 1px solid var(--flash);
     }
 
     .title {
@@ -40,6 +45,7 @@
     .body {
         padding: 2.8rem;
         font-size: 1.5rem;
+        background-color: var(--back-2);
     }
 
     .active {

@@ -54,8 +54,9 @@ import Backdrop from './Backdrop.svelte'
     }
     
     .active-image {
-        width: 80%;
+        width: 65%;
         border-radius: 3px;
+
     }
 
     span {

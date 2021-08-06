@@ -42,13 +42,35 @@
 /*	theme vars */
 .theme-default {
 	--back:       	#ffffff;
-	--back-light: 	#f6fafd;
+	--back-2: 		#F5F5F5;
+	// --back-3: 		#C7C7C7;
+	--back-3: 		#ffffff;
 	--prime:      	#394762;
 	--second:     	#7D868A;
 	--flash:      	#f26522;
 	--black:		rgb(12, 12, 12);
 	--heading:		var(--second);
 	--text:      	#444;
+	--text-second:	#7D868A;
+	--sidebar: 		#ebe8e8;
+	--sidebar-text: rgba(255, 255, 255, .75);
+	--border-w:  		.3rem; /* border-width  */
+	--border-r:  		.4rem; /* border-radius */
+}
+
+.theme-dark {
+	--back:       	#121212;
+	// --back:			rgb(30, 30, 30);
+	--back-2:		rgb(37, 37, 38);
+	--back-3:		rgb(51, 51, 51);
+	--prime:      	#636e88;
+	--second:     	#999999;
+	--flash:      	#f26522;
+	--black:		rgb(192, 192, 192);
+	--heading:		var(--second);
+	--text:      	#FFFFFF;
+	--text-second:	#dadada;
+	--sidebar: 		var(--back-2);
 	--sidebar-text: rgba(255, 255, 255, .75);
 	--border-w:  		.3rem; /* border-width  */
 	--border-r:  		.4rem; /* border-radius */
@@ -142,6 +164,7 @@ html,
 body{
 	width: 100%;
 	height: 100%;
+	color: var(--text);
 }
 
 * {
@@ -170,7 +193,7 @@ body {
 }
 
 h1 {
-	color: var(--prime);
+	color: var(--text);
 	position: relative;
 	margin: 0;
 }
@@ -178,7 +201,7 @@ h1 {
 h2, h3, h4, h5, h6, blockquote {
 	position: relative;
 	margin: 0;
-	color: var(--second);
+	color: var(--text-second);
 }
 
 /* h1, h2, h3, h4, h5, h6 { font-weight: 600 } */
