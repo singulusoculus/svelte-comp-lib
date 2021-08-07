@@ -11,9 +11,9 @@
 
 <div class="darkmode-icon">
     {#if darkMode}
-        <Icon name='moon' on:clicked={toggleMode} size={28} />
-        {:else}
-        <Icon name='sun' on:clicked={toggleMode} size={28} />
+    <Icon name='sun' on:clicked={toggleMode} size={28} />
+    {:else}
+    <Icon name='moon' on:clicked={toggleMode} size={28} />
     {/if}
 </div>
 
