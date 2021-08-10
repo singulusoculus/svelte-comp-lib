@@ -59,6 +59,7 @@
         font: var(--font);
         font-size: 1.8rem;
         background-color: var(--back);
+        color: var(--text);
     }
 
     .text-input {

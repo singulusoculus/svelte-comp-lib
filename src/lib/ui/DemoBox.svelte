@@ -28,7 +28,7 @@
         border: 1px #000 solid;
         width: 100%;
         height: var(--height);
-        display: flex;
+        /* display: flex; */
         z-index: 0;
         background-color: var(--back);
     }
