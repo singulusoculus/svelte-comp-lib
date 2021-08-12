@@ -31,19 +31,10 @@
 	--out-back:    cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-// @media screen and (min-width: 768px) {
-// 	:root {
-// 		--side-page:  14vw;
-// 		--top-offset: 10rem;
-// 		--side-nav: 4.8rem;
-// 	}
-// }
-
 /*	theme vars */
 .theme-default {
 	--back:       	#ffffff;
-	--back-2: 		#F5F5F5;
-	// --back-3: 		#C7C7C7;
+	--back-2: 		#ffffff;
 	--back-3: 		#ffffff;
 	--prime:      	#394762;
 	--second:     	#7D868A;
@@ -187,9 +178,6 @@ body {
 	font: 400 var(--h6)/var(--lh) var(--font);
 	background-color: var(--back);
 	color: var(--text);
-
-	/* default spacing of Overpass is a bit too airy */
-	/* letter-spacing: -.013em; */
 }
 
 h1 {
