@@ -1,11 +1,24 @@
 <script>
+import Card from "$lib/ui/Card.svelte";
+import VisiLoad from '$lib/ui/Visiload.svelte';
+import { fly, fade } from 'svelte/transition';
 
 </script>
+
+
     <h2>Home</h2>
     <p>PageContainer, Header, Content, and Footer components are found in the __layout.svelte file and will apply to each page route.</p>
     <p>This page layout is predicated on having the global.scss file defined and imported with certain variables. Bringing this file into your project and altering it should help you think through some common design elements up front.</p>
     <p>Icons come from svgs stored in the Icons.svelte file and can be applied with the Icon.svelte component</p>
-      
+
+    <VisiLoad steps={100} threshold={70}>
+        <div in:fade={{delay: 500}}>
+            <Card>
+                <h1>Top page load</h1>
+            </Card>
+        </div>
+    </VisiLoad>
+
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
@@ -21,13 +34,34 @@
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>  
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+    
+    <VisiLoad steps={100} threshold={20}>
+        <div in:fly={{duration: 1000, x: 500}}>
+            <Card>
+                <h1>From the right</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+            
+            </Card>
+        </div>
+    </VisiLoad>
+
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
+        
+    <VisiLoad steps={100} threshold={50} height="30rem">
+        <img alt="BC Logo"
+            in:fly={{duration: 1000, x: -500}}
+            src="logo.png">
+    </VisiLoad>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>    
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
@@ -44,5 +78,10 @@
 <style>
     h2 {
         margin: 2rem 0 1rem 0;
+    }
+
+    img {
+        height: 300px;
+        width: 300px;
     }
 </style>
