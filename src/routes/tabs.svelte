@@ -8,6 +8,8 @@
 
     let tabs = ['Home', 'Here', 'Somewhere', 'Everywhere']
     let active = 'somewhere'
+
+    let activePillTab
 </script>
 <h2>Tabs</h2>
 <DemoBox title="Tab Bar">
@@ -35,12 +37,20 @@
 </DemoBox>
 
 <DemoBox title="Tab Pill">
-    <TabsPill />
+    <TabsPill bind:active={activePillTab} />
+    <div class="pill-info">
+        <h3>Active Tab: {activePillTab}</h3>
+    </div>
 </DemoBox>
 
 <style>
     h2 {
         margin: 2rem 0 1rem 0;
+    }
+
+    .pill-info {
+        margin-top: 2rem;
+        text-align: center;
     }
 
 </style>

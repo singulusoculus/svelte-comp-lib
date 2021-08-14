@@ -42,6 +42,7 @@
         border-radius: 8px;
         font-size: 0;
         box-shadow: 0 2px 3px 0 rgba(0,0,0,0.5);
+        overflow: hidden;
     }
 
     nav span {

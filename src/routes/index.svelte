@@ -1,7 +1,7 @@
 <script>
 import Card from "$lib/ui/Card.svelte";
 import VisiLoad from '$lib/ui/Visiload.svelte';
-import { fly, fade } from 'svelte/transition';
+import Icon from '$lib/ui/Icon.svelte'
 
 </script>
 
@@ -11,12 +11,17 @@ import { fly, fade } from 'svelte/transition';
     <p>This page layout is predicated on having the global.scss file defined and imported with certain variables. Bringing this file into your project and altering it should help you think through some common design elements up front.</p>
     <p>Icons come from svgs stored in the Icons.svelte file and can be applied with the Icon.svelte component</p>
 
-    <VisiLoad steps={100} threshold={70}>
-        <div in:fade={{delay: 500}}>
-            <Card>
-                <h1>Top page load</h1>
-            </Card>
-        </div>
+    <VisiLoad threshold={70} inTrans='fly' inOptions={{x:-500, duration:1000}}>
+        <Card>
+            <h1>From left</h1>
+        </Card>
+    </VisiLoad>
+
+
+    <VisiLoad threshold={70} inTrans='fly' inOptions={{x:500, duration:1000}}>
+        <Card>
+            <h1>From right</h1>
+        </Card>
     </VisiLoad>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
@@ -39,26 +44,27 @@ import { fly, fade } from 'svelte/transition';
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     
-    <VisiLoad steps={100} threshold={20}>
-        <div in:fly={{duration: 1000, x: 500}}>
+    <VisiLoad threshold={20} inTrans='fade' inOptions={{duration:1000}}>
             <Card>
-                <h1>From the right</h1>
+                <h1>Fade in</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
             
             </Card>
-        </div>
     </VisiLoad>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
         
-    <VisiLoad steps={100} threshold={50} height="30rem">
+    <VisiLoad threshold={50} height="30rem" inTrans='scale' inOptions={{duration: 500, delay: 500, opacity: 0.5, start: 0.5}}>
         <img alt="BC Logo"
-            in:fly={{duration: 1000, x: -500}}
             src="logo.png">
+    </VisiLoad>
+
+    <VisiLoad threshold={50} height='10rem' inTrans='blur' inOptions={{duration: 5000}}>
+        <Icon name='mail' size={100} />
     </VisiLoad>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>    

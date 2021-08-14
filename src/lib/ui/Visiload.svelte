@@ -1,4 +1,7 @@
 <script>
+    // I want to bring the transition into the component to avoid a wrapping div - how can I do this?
+
+    import { fade, fly, blur, slide, scale, draw } from 'svelte/transition';
     import {onMount} from 'svelte';
 
     export let top = 0;
@@ -8,9 +11,12 @@
     export let steps = 100;
     export let height = 'unset'
     export let threshold = undefined
-    export let once = true  
+    export let once = true 
+    
+    export let inTrans = undefined
+    export let inOptions = {}
 
-
+    let inTransFunc = undefined
     let element;
     let percent;
     let observer;
@@ -20,6 +26,20 @@
 
     $: visible = !intersectionObserverSupport || percent >= threshold;
 	$: if (intersectionObserverSupport && visible && once) unobserve();
+
+    if (inTrans === 'fly') {
+        inTransFunc = fly
+    } else if (inTrans === 'fade') {
+        inTransFunc = fade
+    } else if (inTrans === 'blur') {
+        inTransFunc = blur
+    } else if (inTrans === 'slide') {
+        inTransFunc = slide
+    } else if (inTrans === 'scale') {
+        inTransFunc = scale
+    } else if (inTrans === 'draw') {
+        inTransFunc = draw
+    }
 
     function intersectPercent(entries) {
         entries.forEach(entry => {
@@ -54,7 +74,9 @@
 
 <div bind:this={element} style="--height: {height}">
     {#if visible}
-    <slot {percent} {unobserve} {intersectionObserverSupport} {visible}/>
+    <div in:inTransFunc={inOptions}>
+        <slot {percent} {unobserve} {intersectionObserverSupport} {visible}/>
+    </div>
     {/if}
 </div>
 
