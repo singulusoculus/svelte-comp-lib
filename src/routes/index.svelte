@@ -11,7 +11,7 @@ import Icon from '$lib/ui/Icon.svelte'
     <p>This page layout is predicated on having the global.scss file defined and imported with certain variables. Bringing this file into your project and altering it should help you think through some common design elements up front.</p>
     <p>Icons come from svgs stored in the Icons.svelte file and can be applied with the Icon.svelte component</p>
 
-    <VisiLoad threshold={70} inTrans='fly' inOptions={{x:-500, duration:1000}}>
+    <VisiLoad threshold={70} inTrans='fly' inOptions={{x:-500, duration:1500, delay:100}}>
         <Card>
             <h1>From left</h1>
         </Card>
@@ -58,12 +58,12 @@ import Icon from '$lib/ui/Icon.svelte'
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quos, blanditiis rerum accusamus assumenda quo voluptatum praesentium fuga enim, accusantium commodi sapiente asperiores nesciunt? Quasi unde iusto placeat quaerat aut?</p>
         
-    <VisiLoad threshold={50} height="30rem" inTrans='scale' inOptions={{duration: 500, delay: 500, opacity: 0.5, start: 0.5}}>
+    <VisiLoad threshold={50} height="30rem" inTrans='scale' inOptions={{duration: 1000, delay: 100, opacity: 0.5, start: 0.3}}>
         <img alt="BC Logo"
             src="logo.png">
     </VisiLoad>
 
-    <VisiLoad threshold={50} height='10rem' inTrans='blur' inOptions={{duration: 5000}}>
+    <VisiLoad threshold={50} height='10rem' inTrans='blur' inOptions={{duration: 1500}}>
         <Icon name='mail' size={100} />
     </VisiLoad>
 

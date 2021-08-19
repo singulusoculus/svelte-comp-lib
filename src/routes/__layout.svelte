@@ -53,6 +53,10 @@
             name: 'Navigation',
             href: '/navigation'
         },
+        {
+            name: 'Data Table',
+            href: '/datatable'
+        },
     ]
 
     let navItems = [

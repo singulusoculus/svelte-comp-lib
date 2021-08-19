@@ -114,6 +114,14 @@
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
         </symbol>
 
+        <symbol id='share' class='icon' viewBox='0 0 24 24'>
+            <circle cx="18" cy="5" r="3"></circle>
+            <circle cx="6" cy="12" r="3"></circle>
+            <circle cx="18" cy="19" r="3"></circle>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+        </symbol>
+
         <symbol id='smartphone' class='icon' viewBox='0 0 24 24'>
             <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
             <line x1="12" y1="18" x2="12.01" y2="18"></line>
@@ -134,6 +142,13 @@
         <symbol id='tablet' class='icon' viewBox='0 0 24 24'>
             <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
             <line x1="12" y1="18" x2="12.01" y2="18"></line>
+        </symbol>
+
+        <symbol id='trash' class='icon' viewBox='0 0 24 24'>
+            <polyline points="3 6 5 6 21 6"></polyline>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
         </symbol>
 
         <symbol id='user' class='icon' viewBox='0 0 24 24'>
