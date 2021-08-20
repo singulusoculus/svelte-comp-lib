@@ -57,6 +57,10 @@
             name: 'Data Table',
             href: '/datatable'
         },
+        {
+            name: 'Visiload',
+            href: '/visiload'
+        },
     ]
 
     let navItems = [

@@ -4,14 +4,11 @@
     import TextField from '$lib/ui/TextField.svelte'
     import Button from '$lib/ui/Button.svelte'
 
-    export let striped = false
-    export let highlight = false
-
-    export let searchable = false
-
     export let head = {}
     export let rows = []
-
+    export let striped = false
+    export let highlight = false
+    export let searchable = false
     export let paginate = true
     export let pageSize = 10
 
@@ -32,13 +29,8 @@
     }, [])
 
     $: visibleRows = paginate ? pages[currentPage - 1]: newRows
-
     $: from = (pageSize * currentPage) - (pageSize - 1)
     $: to = currentPage === lastPage ? totalItems : (pageSize * currentPage)
-
-    // const range = (size, startAt = 0, maxSize = 5) => {
-    //     return [...Array(size).keys()].map(i => i + startAt)
-    // }
 
     let sorted_by;
     let sorted_asc = {};
