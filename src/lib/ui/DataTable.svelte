@@ -3,14 +3,42 @@
     import Icon from '$lib/ui/Icon.svelte'
     import TextField from '$lib/ui/TextField.svelte'
     import Button from '$lib/ui/Button.svelte'
-import { custom_event } from 'svelte/internal';
 
     export let striped = false
     export let highlight = false
+
     export let searchable = false
 
     export let head = {}
     export let rows = []
+
+    export let paginate = true
+    export let pageSize = 10
+
+    let currentPage = 1
+    let pageCount = Math.ceil(rows.length / pageSize)
+    let lastPage = pageCount
+    let totalItems = rows.length
+
+    $: pages = newRows.reduce((result, item, index) => {
+        const pageIndex = Math.floor(index / pageSize)
+        if(!result[pageIndex]) {
+            result[pageIndex] = [] // start new page
+        }
+
+        result[pageIndex].push(item)
+        return result
+
+    }, [])
+
+    $: visibleRows = paginate ? pages[currentPage - 1]: newRows
+
+    $: from = (pageSize * currentPage) - (pageSize - 1)
+    $: to = currentPage === lastPage ? totalItems : (pageSize * currentPage)
+
+    // const range = (size, startAt = 0, maxSize = 5) => {
+    //     return [...Array(size).keys()].map(i => i + startAt)
+    // }
 
     let sorted_by;
     let sorted_asc = {};
@@ -147,7 +175,7 @@ import { custom_event } from 'svelte/internal';
     const exportTableToCSV = () => {
         const filename = 'export.csv'
         const csv = [];
-        const rows = document.querySelectorAll("table tr")
+        const rows = tableEl.querySelectorAll("tr")
         // const rows = tableEl
     
         for (var i = 0; i < rows.length; i++) {
@@ -229,15 +257,31 @@ import { custom_event } from 'svelte/internal';
         flex-wrap: wrap;
     }
 
+    .buttons {
+        display: flex;
+    }
+
+    .pagination {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+
+    .page-buttons {
+        display: flex;
+    }
+
 </style>
 
 <div class="controls">
     {#if searchable}
     <TextField prependIcon='search' label="Search"  on:textChange={handleSearch} />
     {/if}
-
-    <Button text='Copy' on:clicked={handleCopyClick} icon='copy' />
-    <Button text='CSV' on:clicked={exportTableToCSV} icon='file-text' />
+    <div class="buttons">
+        <Button text='Copy' on:clicked={handleCopyClick} icon='copy' />
+        <Button text='CSV' on:clicked={exportTableToCSV} icon='file-text' />
+    </div>
 </div>
 
 <table class:striped="{striped}" class:highlight="{highlight}" bind:this={tableEl}>
@@ -268,7 +312,7 @@ import { custom_event } from 'svelte/internal';
     </thead>
 
     <tbody>
-        {#each newRows as row, i}
+        {#each visibleRows as row, i}
             <tr class="c-{row.item}">
                 {#each keys(head) as h}
                     {#if head[h].render}
@@ -301,3 +345,19 @@ import { custom_event } from 'svelte/internal';
         {/each}
     </tbody>
 </table>
+
+{#if paginate}
+<div class="pagination">
+    <div class="page-info">
+        <span>Page {currentPage} of {lastPage} (Items {from} - {to} of {totalItems})</span>
+    </div>
+
+    <div class="page-buttons">
+        <Button text="First" on:clicked={() => {currentPage = 1}} disabled={currentPage === 1} />
+        <Button text="Previous" on:clicked={() => {currentPage = currentPage - 1}} disabled={currentPage === 1}/>
+        <Button text="Next" on:clicked={() => {currentPage = currentPage + 1}} disabled={currentPage === lastPage} />
+        <Button text="Last" on:clicked={() => {currentPage = lastPage}} disabled={currentPage === lastPage} />
+
+    </div>
+</div>
+{/if}

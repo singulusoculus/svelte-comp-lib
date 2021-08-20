@@ -119,12 +119,52 @@
             active: 1,
             id: 15
         },
+        {
+            rank: 7,
+            game: 'Concordia',
+            score: 82.5,
+            times_ranked: 2277,
+            active: 1,
+            id: 16
+        },
+        {
+            rank: 8,
+            game: 'Concordia',
+            score: 82.5,
+            times_ranked: 2277,
+            active: 1,
+            id: 17
+        },
+        {
+            rank: 9,
+            game: 'Concordia',
+            score: 82.5,
+            times_ranked: 2277,
+            active: 1,
+            id: 18
+        },
+        {
+            rank: 10,
+            game: 'Concordia',
+            score: 82.5,
+            times_ranked: 2277,
+            active: 1,
+            id: 19
+        },
+        {
+            rank: 11,
+            game: 'Concordia',
+            score: 82.5,
+            times_ranked: 2277,
+            active: 1,
+            id: 20
+        },
     ]
 
 </script>
 
 <h2>Data Table</h2>
-<DataTable striped={true} {head} {rows} searchable={true} />
+<DataTable striped={true} {head} {rows} searchable={true} paginate={true} pageSize={5} />
 
 <style>
 
