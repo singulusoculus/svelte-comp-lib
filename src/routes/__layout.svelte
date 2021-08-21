@@ -18,44 +18,44 @@
             href: '/buttons'
         },
         {
-            name: 'Text Fields',
-            href: '/text-fields'
-        },
-        {
-            name: 'Loaders and Progress',
-            href: '/loaders-progress'
-        },
-        {
-            name: 'Controls',
-            href: '/controls'
+            name: 'Cards',
+            href: '/card'
         },
         {
             name: 'Collapsible',
             href: '/collapsible'
         },
         {
-            name: 'Cards',
-            href: '/card'
+            name: 'Controls',
+            href: '/controls'
         },
         {
-            name: 'Lightbox',
-            href: '/lightbox'
+            name: 'Data Table',
+            href: '/datatable'
         },
         {
             name: 'Divider',
             href: '/divider'
         },
         {
-            name: 'Tabs',
-            href: '/tabs'
+            name: 'Lightbox',
+            href: '/lightbox'
+        },
+        {
+            name: 'Loaders and Progress',
+            href: '/loaders-progress'
         },
         {
             name: 'Navigation',
             href: '/navigation'
         },
         {
-            name: 'Data Table',
-            href: '/datatable'
+            name: 'Tabs',
+            href: '/tabs'
+        },
+        {
+            name: 'Text Fields',
+            href: '/text-fields'
         },
         {
             name: 'Visiload',
