@@ -16,6 +16,7 @@
     let pageCount = Math.ceil(rows.length / pageSize)
     let lastPage = pageCount
     let totalItems = rows.length
+    let visibleRows
 
     $: pages = newRows.reduce((result, item, index) => {
         const pageIndex = Math.floor(index / pageSize)
@@ -28,13 +29,25 @@
 
     }, [])
 
-    $: visibleRows = paginate ? pages[currentPage - 1]: newRows
+    $: {
+        if(paginate) {
+            if(pages[currentPage - 1]) {
+                visibleRows = pages[currentPage - 1]
+            } else {
+                visibleRows = []
+            }
+        } else {
+            visibleRows = newRows
+        }
+    }
+    
     $: from = (pageSize * currentPage) - (pageSize - 1)
     $: to = currentPage === lastPage ? totalItems : (pageSize * currentPage)
 
     let sorted_by;
     let sorted_asc = {};
     let tableEl
+    let colCount = Object.keys(head).filter(h => head[h].render === true).length
 
     $: newRows = addPropsToRows(head, rows)
 
@@ -88,7 +101,6 @@
             data = rows.sort((a,b) => a[h]>b[h] ? 1:-1)
             sorted_asc[h] = true;
         }
-        // apData.setApData(data)
         newRows = rows
         sorted_by = h;
     }
@@ -100,7 +112,12 @@
 
     const handleSearch = (e) => {
         const searchText = e.detail
-        newRows = rows.filter((item) => item.game.toLowerCase().includes(searchText.toLowerCase()))
+        let filtered = rows.filter((item) => item.game.toLowerCase().includes(searchText.toLowerCase()))
+        if (filtered.length > 0) {
+            newRows = filtered
+        } else {
+            newRows = []
+        }
     }
 
     const handleCopyClick = () => {
@@ -304,7 +321,7 @@
     </thead>
 
     <tbody>
-        {#each visibleRows as row, i}
+        {#each visibleRows as row}
             <tr class="c-{row.item}">
                 {#each keys(head) as h}
                     {#if head[h].render}
@@ -334,6 +351,8 @@
                     {/if}
                 {/each}
             </tr>
+        {:else}
+        <tr><td colspan={colCount} style="text-align:center;">No Items Found</td></tr>
         {/each}
     </tbody>
 </table>
