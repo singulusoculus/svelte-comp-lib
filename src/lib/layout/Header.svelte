@@ -31,7 +31,7 @@
     .header-wrapper {
         position: fixed;
         top: 0;
-        left: 0;
+        // left: 0;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -53,7 +53,7 @@
     header {
 		position: fixed;
 		top: 0;
-		left: 0;
+		// left: 0;
 		width: 100%;
 		height: var(--nav-h);
 		padding: 0 0 0 1.5rem;

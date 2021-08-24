@@ -47,6 +47,7 @@
     let sorted_by;
     let sorted_asc = {};
     let tableEl
+    let tableElComplete
     let colCount = Object.keys(head).filter(h => head[h].render === true).length
 
     $: newRows = addPropsToRows(head, rows)
@@ -121,8 +122,11 @@
     }
 
     const handleCopyClick = () => {
-        const el = tableEl
-        const body = document.body
+        const el = tableElComplete
+
+        el.style.display = 'block'
+
+        // const body = document.body
         let range 
         let sel
         if (document.createRange && window.getSelection) {
@@ -136,11 +140,11 @@
                 range.selectNode(el);
                 sel.addRange(range);
             }
-        } else if (body.createTextRange) {
-            range = body.createTextRange();
-            range.moveToElementText(el);
-            range.select();
-        }
+        } // else if (body.createTextRange) {
+        //     range = body.createTextRange();
+        //     range.moveToElementText(el);
+        //     range.select();
+        // }
         document.execCommand("Copy");
 
         // Deselect
@@ -152,6 +156,7 @@
                 }
         }
         console.log('Copied!')
+        el.style.display = 'none'
         // toasts.pushToast({msg: 'The table has been copied'})
     }
 
@@ -184,7 +189,7 @@
     const exportTableToCSV = () => {
         const filename = 'export.csv'
         const csv = [];
-        const rows = tableEl.querySelectorAll("tr")
+        const rows = tableElComplete.querySelectorAll("tr")
         // const rows = tableEl
     
         for (var i = 0; i < rows.length; i++) {
@@ -281,6 +286,11 @@
         display: flex;
     }
 
+    .table-comp {
+        display: none;
+        opacity: 0;
+    }
+
 </style>
 
 <div class="controls">
@@ -372,3 +382,34 @@
     </div>
 </div>
 {/if}
+
+
+<table class="table-comp" bind:this={tableElComplete}>
+    <thead>
+        <tr>
+            {#each keys(head) as h}
+                {#if head[h].render}
+                    <th>
+                        {val(head[h])}
+                    </th>
+                {/if}
+            {/each}
+        </tr>
+    </thead>
+
+    <tbody>
+        {#each newRows as row}
+            <tr>
+                {#each keys(head) as h}
+                    {#if head[h].render}
+                        <td>
+                            {val(row[h])}
+                        </td>
+                    {/if}
+                {/each}
+            </tr>
+        {/each}
+    </tbody>
+</table>
+
+

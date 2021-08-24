@@ -123,6 +123,7 @@
 
     .header {
         grid-area: head;
+        position: relative;
         z-index: 20;
     }
 
