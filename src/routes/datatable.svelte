@@ -31,6 +31,7 @@
         times_ranked: {
 			render: true,
 			type: 'value',
+            format: 'number-with-commas',
 			title: 'Times Ranked',
 			sort: true,
         },

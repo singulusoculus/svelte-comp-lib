@@ -106,10 +106,16 @@
         sorted_by = h;
     }
 
-    const formatter = new Intl.NumberFormat('en-US', {
-        style: 'currency',
-        currency: 'USD'
-    })
+    const formatNumber = (format, value) => {
+        if (format === 'currency') {
+            return new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD'
+            }).format(value)
+        } else if (format === 'number-with-commas') {
+            return  new Intl.NumberFormat().format(value)
+        }
+    }
 
     const handleSearch = (e) => {
         const searchText = e.detail
@@ -123,10 +129,8 @@
 
     const handleCopyClick = () => {
         const el = tableElComplete
-
         el.style.display = 'block'
 
-        // const body = document.body
         let range 
         let sel
         if (document.createRange && window.getSelection) {
@@ -140,21 +144,9 @@
                 range.selectNode(el);
                 sel.addRange(range);
             }
-        } // else if (body.createTextRange) {
-        //     range = body.createTextRange();
-        //     range.moveToElementText(el);
-        //     range.select();
-        // }
+        } 
         document.execCommand("Copy");
 
-        // Deselect
-        if (window.getSelection) {
-            if (window.getSelection().empty) {  // Chrome
-                window.getSelection().empty();
-            } else if (window.getSelection().removeAllRanges) {  // Firefox
-                window.getSelection().removeAllRanges();
-                }
-        }
         console.log('Copied!')
         el.style.display = 'none'
         // toasts.pushToast({msg: 'The table has been copied'})
@@ -349,8 +341,8 @@
                             {:else if head[h].type === 'icon'}
                                 <Icon name={head[h].icon} on:clicked={head[h].func(row.id)} />
                             {:else if head[h].type === 'value'}
-                                {#if head[h].format === 'currency'}
-                                    {formatter.format(val(row[h]))}
+                                {#if head[h].format}
+                                    {formatNumber(head[h].format, val(row[h]))}
                                 {:else}
                                     {val(row[h])}
                                 {/if}
@@ -411,5 +403,6 @@
         {/each}
     </tbody>
 </table>
+
 
 
